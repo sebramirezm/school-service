@@ -1,0 +1,18 @@
+CREATE SCHEMA 'schoolapp' ;
+
+CREATE TABLE Courses (id int NOT NULL, name varchar(40) , primary key(id));
+CREATE TABLE Students (id INT NOT NULL, firstName VARCHAR(30), lastName VARCHAR(30), age INT, courseid INT, foreign key (courseid) references Courses(id));
+
+INSERT INTO Courses VALUES ( 1, 'Mathematics');
+INSERT INTO Courses VALUES ( 2, 'Idioms');
+INSERT INTO Courses VALUES ( 3, 'Coding');
+INSERT INTO Courses VALUES ( 4, 'Algorithms');
+
+INSERT INTO Students VALUES (1,'Dario','Toro',18,3);
+INSERT INTO Students VALUES (2,'Eduardo','Pichardo',22,3);
+INSERT INTO Students VALUES (3,'Nicolas','Fernandez',21,3);
+INSERT INTO Students VALUES (4,'Jose','Mura',19,4);
+INSERT INTO Students VALUES (5,'Franco','Guajardo',22,1);
+INSERT INTO Students VALUES (6,'Javier','Mella',28,2);
+
+commit;
